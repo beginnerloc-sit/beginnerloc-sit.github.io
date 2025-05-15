@@ -1,4 +1,3 @@
-
 ---
 title: "About My Project"
 format: html
@@ -28,8 +27,7 @@ When any rule violation or dangerous behavior is detected, the system will:
 
 ## 🖼️ System in Action
 
-::: {.image-grid}
+:::{.image-grid-2col}
 ![](about_1.jpg){.project-image}
 ![](about_2.jpg){.project-image}
 :::
-
