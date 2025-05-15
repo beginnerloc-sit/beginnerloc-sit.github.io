@@ -65,3 +65,36 @@ a.github-link:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.12);
 }
 
+.note-section {
+  background-color: #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.note-section h2 {
+  color: #3de69d;
+}
+
+blockquote {
+  background-color: #334155;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #3de69d;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #cbd5e1;
+}
+
+.video-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+video, iframe {
+  border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}

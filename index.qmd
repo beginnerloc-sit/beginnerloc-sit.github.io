@@ -10,14 +10,14 @@ css: styles.css
 :::
 
 ::: profile-right
-# Hi, I'm Tran Tien Loc 👋
+# Hi, I'm Tran Tien Loc
 
 I'm a Year 1 student majoring in **Applied Artificial Intelligence** at the *Singapore University of Technology*.\
 While my primary focus is AI, I'm also passionate about **software engineering**, especially in **cloud-related technologies**.
 
 Check out my GitHub profile here: [github.com/beginnerloc-sit](https://github.com/beginnerloc-sit){.github-link}
 
-## 🎮 Interests
+## Interests
 
 -   **Video Games**: League of Legends main\
 -   **Sports**: Football and Badminton\

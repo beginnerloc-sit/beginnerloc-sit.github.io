@@ -1,0 +1,33 @@
+---
+title: "About My Project"
+format: html
+css: styles.css
+---
+
+# AI Vision Safety Monitoring System 👷‍♂️📹
+
+This is an end-to-end system that leverages **AI Vision** to monitor **safety compliance** and **attendance** at construction sites.  
+Its goal is to enhance worksite safety and efficiency through automation.
+
+:::{.project-description}
+
+The system integrates computer vision models with real-time camera feeds to:
+
+- Detect **PPE violations** (e.g., missing helmet or vest)
+- Track **on-site personnel attendance**
+- **Capture abnormalities** and instantly **alert supervisors** through a monitoring dashboard
+
+When any rule violation or dangerous behavior is detected, the system will:
+
+1. **Capture a snapshot**
+2. **Flag the event**
+3. **Send an alert** to the central dashboard for human response
+
+:::
+
+## System in Action
+
+:::{.image-grid-2col}
+![](about_1.jpg){.project-image}
+![](about_2.jpg){.project-image}
+:::

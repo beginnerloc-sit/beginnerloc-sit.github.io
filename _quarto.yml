@@ -10,7 +10,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: project.qmd
+        text: Project
+      - href: learning-notes.qmd
+        text: Learning Notes
+      - href: reflection.qmd
+        text: Reflection
 
 format:
   html:
@@ -22,6 +27,4 @@ format:
     toc-depth: 3
     toc-location: left
 
-
 editor: visual
-

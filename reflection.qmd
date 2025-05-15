@@ -1,0 +1,73 @@
+---
+title: "Reflection on the Use of GenAI"
+format: html
+css: styles.css
+---
+
+## GenAI Tool I Used
+
+For this assessment, I used [ChatGPT](https://chat.openai.com) by OpenAI.
+
+I chose ChatGPT because:
+
+- It responds quickly with contextual and relevant content
+- It supports Markdown, code, and web technologies like CSS
+- I am paying S$25 subscription for the Pro version, which is worth it for my needs
+
+---
+
+## How ChatGPT Helped Me
+
+Here’s how ChatGPT supported me throughout the project:
+
+### Writing and Structuring
+
+- Helped me to revise the syntax for Markdown and Quarto blocks to follow best practices
+- Assisted in drafting this reflection content
+
+### Styling with CSS
+
+ChatGPT generated a responsive and aesthetic `styles.css` file that:
+
+- Aligned profile and project content properly
+- Made the site mobile-friendly
+- Matched a dark theme I personally prefer
+
+> It saved me from having to look up dozens of CSS layout issues.
+
+---
+
+## Benefits of Using GenAI
+
+- Saves time and reduces stress
+- Helps when I'm stuck and don't know how to begin
+- Offers inspiration and variations that improve creativity
+
+> “The tool is like a pair programmer and writing coach combined.”
+
+---
+
+## Challenges I Faced
+
+- It sometimes produces overly complex examples I had to simplify
+- The suggestions depend heavily on how well I phrased my questions
+- I still needed to test and fine-tune the results manually
+
+---
+
+## How I Might Use GenAI in the Future
+
+I believe GenAI tools will assist me by:
+
+- Explaining tough concepts during revision
+- Helping debug code faster during assignments
+- Acting as a support system in both solo and group projects
+
+---
+
+## Learning Resources
+
+I also learned the basics of Quarto from the following video:
+
+{{< video https://www.youtube.com/watch?v=rphrFDf00mk width="600" height="400" >}}
+

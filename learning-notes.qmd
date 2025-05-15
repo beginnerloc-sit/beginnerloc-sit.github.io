@@ -1,0 +1,42 @@
+---
+title: "My Learning Notes"
+format: html
+css: styles.css
+---
+
+# My Learning Notes – How I Learn Smarter, Not Just Harder
+
+During my journey studying **Applied Artificial Intelligence**, I've discovered that **how** you learn matters just as much as **what** you learn.
+
+Taking notes isn't just about recording what the lecturer says—it’s about **actively processing information**, making connections, and revisiting the material strategically.
+
+##️ How I Take Notes
+
+I organize my learning notes in three stages:
+
+- **Quick Capture** (During lecture):
+  - Focus on core concepts, diagrams, and keywords.
+  - Use shorthand and symbols to move fast.
+- **Refinement** (After class):
+  - Rewrite and restructure the notes in my own words.
+  - Add mind maps or flowcharts for complex processes.
+- **Review & Spaced Repetition**:
+  - Use tools like Notion and Anki to schedule short review sessions.
+  - I try to teach the concept to a friend—if I can teach it, I know it.
+
+## Tools That Work for Me
+
+- `Notion` for syncing class notes and assignments  
+- `Obsidian` for graph-based note linking  
+- `Anki` for flashcards (especially helpful in ML algorithms)
+
+## How It Helped
+
+- Better grades with less cramming
+- More confidence discussing technical topics
+- Faster understanding in team projects and internships
+
+> “The faintest ink is better than the best memory.”
+
+This quote reminds me to **always write things down**, especially during fast-paced AI and programming modules.
+

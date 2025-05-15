@@ -19,5 +19,89 @@
     "title": "Tran Tien Loc",
     "section": "",
     "text": "Video Games: League of Legends main\n\nSports: Football and Badminton\n\nTech Passion: Building things that scale on the cloud"
+  },
+  {
+    "objectID": "learning-notes.html",
+    "href": "learning-notes.html",
+    "title": "My Learning Notes",
+    "section": "",
+    "text": "During my journey studying Applied Artificial Intelligence, I’ve discovered that how you learn matters just as much as what you learn.\nTaking notes isn’t just about recording what the lecturer says—it’s about actively processing information, making connections, and revisiting the material strategically.\n##️ How I Take Notes\nI organize my learning notes in three stages:\n\nQuick Capture (During lecture):\n\nFocus on core concepts, diagrams, and keywords.\nUse shorthand and symbols to move fast.\n\nRefinement (After class):\n\nRewrite and restructure the notes in my own words.\nAdd mind maps or flowcharts for complex processes.\n\nReview & Spaced Repetition:\n\nUse tools like Notion and Anki to schedule short review sessions.\nI try to teach the concept to a friend—if I can teach it, I know it.\n\n\n\n\n\nNotion for syncing class notes and assignments\n\nObsidian for graph-based note linking\n\nAnki for flashcards (especially helpful in ML algorithms)\n\n\n\n\n\nBetter grades with less cramming\nMore confidence discussing technical topics\nFaster understanding in team projects and internships\n\n\n“The faintest ink is better than the best memory.”\n\nThis quote reminds me to always write things down, especially during fast-paced AI and programming modules."
+  },
+  {
+    "objectID": "learning-notes.html#how-i-take-notes",
+    "href": "learning-notes.html#how-i-take-notes",
+    "title": "My Learning Notes",
+    "section": "",
+    "text": "I organize my learning notes in three stages:\n\nQuick Capture (During lecture):\n\nFocus on core concepts, diagrams, and keywords.\nUse shorthand and symbols to move fast.\n\nRefinement (After class):\n\nRewrite and restructure the notes in my own words.\nAdd mind maps or flowcharts for complex processes.\n\nReview & Spaced Repetition:\n\nUse tools like Notion and Anki to schedule short review sessions.\nI try to teach the concept to a friend—if I can teach it, I know it."
+  },
+  {
+    "objectID": "learning-notes.html#tools-that-work-for-me",
+    "href": "learning-notes.html#tools-that-work-for-me",
+    "title": "My Learning Notes",
+    "section": "",
+    "text": "Notion for syncing class notes and assignments\n\nObsidian for graph-based note linking\n\nAnki for flashcards (especially helpful in ML algorithms)"
+  },
+  {
+    "objectID": "learning-notes.html#how-it-helped",
+    "href": "learning-notes.html#how-it-helped",
+    "title": "My Learning Notes",
+    "section": "",
+    "text": "Better grades with less cramming\nMore confidence discussing technical topics\nFaster understanding in team projects and internships\n\n\n“The faintest ink is better than the best memory.”\n\nThis quote reminds me to always write things down, especially during fast-paced AI and programming modules."
+  },
+  {
+    "objectID": "reflection.html",
+    "href": "reflection.html",
+    "title": "Reflection on the Use of GenAI",
+    "section": "",
+    "text": "For this assessment, I used ChatGPT by OpenAI.\nI chose ChatGPT because:\n\nIt responds quickly with contextual and relevant content\nIt supports Markdown, code, and web technologies like CSS\nI am paying S$25 subscription for the Pro version, which is worth it for my needs"
+  },
+  {
+    "objectID": "reflection.html#genai-tool-i-used",
+    "href": "reflection.html#genai-tool-i-used",
+    "title": "Reflection on the Use of GenAI",
+    "section": "",
+    "text": "For this assessment, I used ChatGPT by OpenAI.\nI chose ChatGPT because:\n\nIt responds quickly with contextual and relevant content\nIt supports Markdown, code, and web technologies like CSS\nI am paying S$25 subscription for the Pro version, which is worth it for my needs"
+  },
+  {
+    "objectID": "reflection.html#how-chatgpt-helped-me",
+    "href": "reflection.html#how-chatgpt-helped-me",
+    "title": "Reflection on the Use of GenAI",
+    "section": "How ChatGPT Helped Me",
+    "text": "How ChatGPT Helped Me\nHere’s how ChatGPT supported me throughout the project:\n\nWriting and Structuring\n\nHelped me to revise the syntax for Markdown and Quarto blocks to follow best practices\nAssisted in drafting this reflection content\n\n\n\nStyling with CSS\nChatGPT generated a responsive and aesthetic styles.css file that:\n\nAligned profile and project content properly\nMade the site mobile-friendly\nMatched a dark theme I personally prefer\n\n\nIt saved me from having to look up dozens of CSS layout issues."
+  },
+  {
+    "objectID": "reflection.html#benefits-of-using-genai",
+    "href": "reflection.html#benefits-of-using-genai",
+    "title": "Reflection on the Use of GenAI",
+    "section": "Benefits of Using GenAI",
+    "text": "Benefits of Using GenAI\n\nSaves time and reduces stress\nHelps when I’m stuck and don’t know how to begin\nOffers inspiration and variations that improve creativity\n\n\n“The tool is like a pair programmer and writing coach combined.”"
+  },
+  {
+    "objectID": "reflection.html#challenges-i-faced",
+    "href": "reflection.html#challenges-i-faced",
+    "title": "Reflection on the Use of GenAI",
+    "section": "Challenges I Faced",
+    "text": "Challenges I Faced\n\nIt sometimes produces overly complex examples I had to simplify\nThe suggestions depend heavily on how well I phrased my questions\nI still needed to test and fine-tune the results manually"
+  },
+  {
+    "objectID": "reflection.html#how-i-might-use-genai-in-the-future",
+    "href": "reflection.html#how-i-might-use-genai-in-the-future",
+    "title": "Reflection on the Use of GenAI",
+    "section": "How I Might Use GenAI in the Future",
+    "text": "How I Might Use GenAI in the Future\nI believe GenAI tools will assist me by:\n\nExplaining tough concepts during revision\nHelping debug code faster during assignments\nActing as a support system in both solo and group projects"
+  },
+  {
+    "objectID": "reflection.html#learning-resources",
+    "href": "reflection.html#learning-resources",
+    "title": "Reflection on the Use of GenAI",
+    "section": "Learning Resources",
+    "text": "Learning Resources\nI also learned the basics of Quarto from the following video:"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "About My Project",
+    "section": "",
+    "text": "This is an end-to-end system that leverages AI Vision to monitor safety compliance and attendance at construction sites.\nIts goal is to enhance worksite safety and efficiency through automation.\n\nThe system integrates computer vision models with real-time camera feeds to:\n\nDetect PPE violations (e.g., missing helmet or vest)\nTrack on-site personnel attendance\nCapture abnormalities and instantly alert supervisors through a monitoring dashboard\n\nWhen any rule violation or dangerous behavior is detected, the system will:\n\nCapture a snapshot\nFlag the event\nSend an alert to the central dashboard for human response"
   }
 ]
