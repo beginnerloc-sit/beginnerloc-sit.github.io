@@ -1,11 +1,26 @@
 ---
-title: "temp_website"
+title: "Tran Tien Loc"
+format: html
+css: styles.css
 ---
 
-This is a Quarto website.
+::::: profile-container
+::: profile-left
+![](tienloc.png){.profile-pic}
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+::: profile-right
+# Hi, I'm Tran Tien Loc 👋
 
-```{r}
-1 + 1
-```
+I'm a Year 1 student majoring in **Applied Artificial Intelligence** at the *Singapore University of Technology*.\
+While my primary focus is AI, I'm also passionate about **software engineering**, especially in **cloud-related technologies**.
+
+Check out my GitHub profile here: [github.com/beginnerloc-sit](https://github.com/beginnerloc-sit){.github-link}
+
+## 🎮 Interests
+
+-   **Video Games**: League of Legends main\
+-   **Sports**: Football and Badminton\
+-   **Tech Passion**: Building things that scale on the cloud
+:::
+:::::

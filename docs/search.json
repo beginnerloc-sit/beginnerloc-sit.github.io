@@ -2,15 +2,22 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "About My Project",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "This is an end-to-end system that leverages AI Vision to monitor safety compliance and attendance at construction sites.\nIts goal is to enhance worksite safety and efficiency through automation.\n\nThe system integrates computer vision models with real-time camera feeds to:\n\nDetect PPE violations (e.g., missing helmet or vest)\nTrack on-site personnel attendance\nCapture abnormalities and instantly alert supervisors through a monitoring dashboard\n\nWhen any rule violation or dangerous behavior is detected, the system will:\n\nCapture a snapshot\nFlag the event\nSend an alert to the central dashboard for human response"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "temp_website",
+    "title": "Tran Tien Loc",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "I’m a Year 1 student majoring in Applied Artificial Intelligence at the Singapore University of Technology.\nWhile my primary focus is AI, I’m also passionate about software engineering, especially in cloud-related technologies.\nCheck out my GitHub profile here: github.com/beginnerloc-sit\n\n\n\nVideo Games: League of Legends main\n\nSports: Football and Badminton\n\nTech Passion: Building things that scale on the cloud"
+  },
+  {
+    "objectID": "index.html#interests",
+    "href": "index.html#interests",
+    "title": "Tran Tien Loc",
+    "section": "",
+    "text": "Video Games: League of Legends main\n\nSports: Football and Badminton\n\nTech Passion: Building things that scale on the cloud"
   }
 ]
