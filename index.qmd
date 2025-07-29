@@ -1,26 +1,35 @@
 ---
-title: "Tran Tien Loc"
+title: "Savings Visualization Project"
 format: html
 css: styles.css
 ---
 
 ::::: profile-container
 ::: profile-left
-![](tienloc.png){.profile-pic}
 :::
 
 ::: profile-right
-# Hi, I'm Tran Tien Loc
 
-I'm a Year 1 student majoring in **Applied Artificial Intelligence** at the *Singapore University of Technology*.\
-While my primary focus is AI, I'm also passionate about **software engineering**, especially in **cloud-related technologies**.
+This project explores how cumulative savings evolve over a person’s working life using realistic assumptions and national data. It reimagines the original DollarsAndSense.sg infographic by improving clarity, transparency, and interactivity.
 
-Check out my GitHub profile here: [github.com/beginnerloc-sit](https://github.com/beginnerloc-sit){.github-link}
+We used income benchmarks from MOM and savings rate estimates from SINGSTAT to model both simple and compound savings scenarios, helping users better understand long-term financial planning.
 
-## Interests
+## Key Features
 
--   **Video Games**: League of Legends main\
--   **Sports**: Football and Badminton\
--   **Tech Passion**: Building things that scale on the cloud
+- Realistic benchmarking using official Singapore datasets  
+- Compare linear (no interest) vs compound savings growth  
+- 5-year income line for contextual understanding  
+- Interactive sliders for savings and interest rates  
+- Cleaner, more accurate visual representation
+
 :::
 :::::
+
+## Tools Used
+
+- R packages: `plotly`, `dplyr`, `tidyr`, `readxl`, `jsonlite`, `htmltools`
+- Interactive dashboard built with Quarto and rendered as a website
+
+## Objective
+
+To promote financial literacy through accessible, data-driven visualizations that demonstrate the power of consistent savings and compound interest over time.

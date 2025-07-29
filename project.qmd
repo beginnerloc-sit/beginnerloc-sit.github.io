@@ -1,33 +1,250 @@
 ---
-title: "About My Project"
+title: "Savings Simulation"
 format: html
-css: styles.css
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-# AI Vision Safety Monitoring System 👷‍♂️📹
+```{r}
+library(readxl)
+library(highcharter)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(knitr)
 
-This is an end-to-end system that leverages **AI Vision** to monitor **safety compliance** and **attendance** at construction sites.  
-Its goal is to enhance worksite safety and efficiency through automation.
+# Load raw Excel file
+df_raw <- suppressMessages(suppressWarnings(read_excel("data/M016081.xlsx", sheet = "M016081", col_names = FALSE)))
+df_income_raw <- suppressMessages(suppressWarnings(read_excel("data/LFR2024_SectionC.xlsx", sheet = "C4", skip = 6)))
 
-:::{.project-description}
+# Rename and clean income data
+colnames(df_income_raw)[1:3] <- c("AgeGroup", "GrossMonthly", "PMETs")
 
-The system integrates computer vision models with real-time camera feeds to:
+df_income <- df_income_raw |>
+  filter(str_detect(AgeGroup, "^\\d+\\s*-\\s*\\d+|60 & Over")) |>
+  select(AgeGroup, GrossMonthly) |>
+  mutate(
+    GrossMonthly = as.numeric(GrossMonthly),
+    TakeHomePay = GrossMonthly * 0.8,
+    MonthlySaving = TakeHomePay * 0.35,
+    YearlySaving = MonthlySaving * 12,
+    YearsInGroup = case_when(
+      AgeGroup == "15 - 19" ~ 1,
+      AgeGroup == "60 & Over" ~ 2,
+      TRUE ~ 5
+    ),
+    SavingsWithoutInvesting = round(YearlySaving * YearsInGroup, 0),
+    CumulativeSavings = cumsum(round(YearlySaving * YearsInGroup, 0))
+  ) |>
+  filter(row_number() <= which(AgeGroup == "60 & Over"))
 
-- Detect **PPE violations** (e.g., missing helmet or vest)
-- Track **on-site personnel attendance**
-- **Capture abnormalities** and instantly **alert supervisors** through a monitoring dashboard
+# Add compounding
+cumulative_with_interest <- numeric(nrow(df_income))
+interest_rate <- 0.04
+total <- 0
+for (i in 1:nrow(df_income)) {
+  for (year in 1:df_income$YearsInGroup[i]) {
+    total <- (total + df_income$YearlySaving[i]) * (1 + interest_rate)
+  }
+  cumulative_with_interest[i] <- round(total, 0)
+}
+df_income$CumulativeWithInterest <- cumulative_with_interest
+```
 
-When any rule violation or dangerous behavior is detected, the system will:
+```{r}
+# Clean saving rate data
+quarter_labels <- as.character(unlist(df_raw[10, ]))
+quarter_labels[1] <- "DataSeries"
+colnames(df_raw) <- make.names(quarter_labels, unique = TRUE)
+df_clean <- df_raw[-c(1:10), ]
+valid_cols <- colnames(df_clean)[!is.na(colnames(df_clean)) & colnames(df_clean) != ""]
+df_clean <- df_clean[, valid_cols]
 
-1. **Capture a snapshot**
-2. **Flag the event**
-3. **Send an alert** to the central dashboard for human response
+df_saving <- df_clean |>
+  filter(str_detect(DataSeries, "Saving Rate")) |>
+  pivot_longer(cols = -DataSeries, names_to = "Quarter", values_to = "SavingRate") |>
+  select(Quarter, SavingRate) |>
+  mutate(
+    Quarter = str_remove(Quarter, "^X"),
+    SavingRate = str_replace_all(SavingRate, ",", "."),
+    SavingRate = as.numeric(str_extract(SavingRate, "[0-9.]+"))
+  )
 
-:::
+df_yearly_avg <- df_saving |>
+  mutate(Year = str_extract(Quarter, "^\\d{4}")) |>
+  group_by(Year) |>
+  summarise(AverageSavingRate = round(mean(SavingRate, na.rm = TRUE), 1)) |>
+  arrange(desc(Year))
+```
 
-## System in Action
+```{r}
+library(plotly)
+library(jsonlite)
+library(htmltools)
 
-:::{.image-grid-2col}
-![](about_1.jpg){.project-image}
-![](about_2.jpg){.project-image}
-:::
+# Prep variables
+df_income <- df_income |>
+  mutate(
+    AgeGroup = as.character(AgeGroup),
+    YearlyBonus = YearlySaving * YearsInGroup,
+    BaseSavings = CumulativeSavings - YearlyBonus,
+    TakeHome5Y = TakeHomePay * 12 * 5
+  )
+
+# Data to JS
+take_home_pay <- toJSON(df_income$TakeHomePay)
+years_in_group <- toJSON(df_income$YearsInGroup)
+age_groups <- toJSON(df_income$AgeGroup)
+
+# Sliders
+sliders <- tags$div(
+  style = "margin-bottom:20px;",
+  tags$div(
+    tags$label("Savings Rate (%): "),
+    tags$input(type = "range", id = "savings_rate", min = "0", max = "100", value = "35"),
+    tags$span(id = "savings_rate_value", "35")
+  ),
+  tags$div(
+    tags$label("Interest Rate (%): "),
+    tags$input(type = "range", id = "interest_rate", min = "0", max = "10", step = "0.1", value = "4"),
+    tags$span(id = "interest_rate_value", "4")
+  )
+)
+
+# JavaScript chart update
+js_code <- tags$script(HTML("
+  function updateChart() {
+    var savingsRate = parseFloat(document.getElementById('savings_rate').value) / 100;
+    var interestRate = parseFloat(document.getElementById('interest_rate').value) / 100;
+
+    var yearlySaving = takeHomePay.map(pay => pay * 12 * savingsRate);
+    var baseSavings = [], bonusSavings = [], bonusBase = [], withInterest = [], takeHome5Y = [], interestGained = [];
+    let cumNoInterest = 0, cumWithInterest = 0;
+
+    for (let i = 0; i < yearlySaving.length; i++) {
+      let bonus = yearlySaving[i] * yearsInGroup[i];
+      baseSavings.push(cumNoInterest);
+      bonusBase.push(cumNoInterest);
+      bonusSavings.push(bonus);
+      cumNoInterest += bonus;
+
+      for (let y = 0; y < yearsInGroup[i]; y++) {
+        cumWithInterest = (cumWithInterest + yearlySaving[i]) * (1 + interestRate);
+      }
+      withInterest.push(Math.round(cumWithInterest));
+      interestGained.push(Math.round(cumWithInterest - cumNoInterest));
+      takeHome5Y.push(takeHomePay[i] * 12 * 5);
+    }
+
+    Plotly.react('plot', [
+      {
+        x: ageGroups,
+        y: baseSavings,
+        name: 'Total Savings (No Interest applied)',
+        type: 'bar',
+        marker: { color: 'lightgreen' },
+        offsetgroup: '1',
+        legendgroup: 'NoInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: bonusSavings,
+        base: bonusBase,
+        name: 'New Savings in Age Group',
+        type: 'bar',
+        marker: { color: 'darkgreen' },
+        offsetgroup: '1',
+        legendgroup: 'NoInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: baseSavings.map((v, i) => v + bonusSavings[i]),
+        name: 'Cumulative Savings (No Interest)',
+        type: 'bar',
+        marker: { color: 'purple' },
+        offsetgroup: '2',
+        legendgroup: 'WithInterest',
+        hoverinfo: 'skip',
+        showlegend: false
+      },
+      {
+        x: ageGroups,
+        y: interestGained,
+        base: baseSavings.map((v, i) => v + bonusSavings[i]),
+        name: 'Total Savings (With Compound Interest)',
+        type: 'bar',
+        marker: { color: 'purple' },
+        offsetgroup: '2',
+        legendgroup: 'WithInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: takeHome5Y,
+        name: 'Estimated 5-Year Take-home Pay',
+        type: 'scatter',
+        mode: 'lines+markers',
+        line: { color: 'orange', width: 3 },
+        marker: { symbol: 'circle', size: 7, color: 'violet' },
+        legendgroup: 'Line'
+      }
+    ], {
+      barmode: 'group',
+      title: 'Savings Comparison: No Interest (Stacked) vs With Interest',
+      xaxis: { title: 'Age Group' },
+      yaxis: { title: 'Amount (SGD)' },
+      hovermode: 'x unified',
+      legend: { x: 0.05, y: 0.95 }
+    });
+  }
+
+  document.getElementById('savings_rate').addEventListener('input', function () {
+    document.getElementById('savings_rate_value').textContent = this.value;
+    updateChart();
+  });
+
+  document.getElementById('interest_rate').addEventListener('input', function () {
+    document.getElementById('interest_rate_value').textContent = this.value;
+    updateChart();
+  });
+
+  setTimeout(updateChart, 300);
+"))
+
+# Initial plot (fallback)
+p <- plot_ly(df_income, x = ~AgeGroup) %>%
+  add_bars(y = ~BaseSavings, name = "Total Savings (No Interest applied)", marker = list(color = "lightgreen")) %>%
+  add_bars(y = ~YearlyBonus, base = ~BaseSavings, name = "New Savings in Age Group", marker = list(color = "darkgreen")) %>%
+  add_bars(y = ~CumulativeWithInterest, name = "Total Savings (With Interest)", marker = list(color = "purple")) %>%
+  add_trace(y = ~TakeHome5Y, name = "Estimated 5-Year Take-home Pay", type = "scatter", mode = "lines+markers",
+            line = list(color = "orange", width = 3), marker = list(symbol = "circle", size = 7, color = "violet"))
+
+
+
+```
+
+```{r hidden-plot, include=FALSE}
+plot_ly(df_income, x = ~AgeGroup, y = ~CumulativeSavings, type = "bar")
+```
+
+```{r, results='asis'}
+# Render output
+browsable(tagList(
+  sliders,
+  tags$div(id = "plot", style = "height:600px; width: 700px;"),
+  tags$script(HTML(paste0("Plotly.newPlot('plot', ", plotly_json(p, jsonedit = FALSE), ");"))),
+  tags$script(HTML(paste0(
+    "var takeHomePay = ", take_home_pay, ";",
+    "var yearsInGroup = ", years_in_group, ";",
+    "var ageGroups = ", age_groups, ";"
+  ))),
+  js_code
+))
+
+```
+
+

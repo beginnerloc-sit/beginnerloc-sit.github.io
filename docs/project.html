@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About My Project – Tien Loc Profile</title>
+<title>Visualizing Savings Accumulation Across Age Groups in Singapore - Savings Simulation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7c99cf3d1d749cc25fc4eb95f557bce5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +67,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -83,11 +92,11 @@ ul.task-list li input[type="checkbox"] {
     <img src="./favicon.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Tien Loc Profile</span>
+    <span class="navbar-title">Visualizing Savings Accumulation Across Age Groups in Singapore</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -100,17 +109,9 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./project.html" aria-current="page"> 
 <span class="menu-text">Project</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./learning-notes.html"> 
-<span class="menu-text">Learning Notes</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./reflection.html"> 
-<span class="menu-text">Reflection</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -119,27 +120,18 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#ai-vision-safety-monitoring-system" id="toc-ai-vision-safety-monitoring-system" class="nav-link active" data-scroll-target="#ai-vision-safety-monitoring-system">AI Vision Safety Monitoring System 👷‍♂️📹</a>
-  <ul class="collapse">
-  <li><a href="#system-in-action" id="toc-system-in-action" class="nav-link" data-scroll-target="#system-in-action">System in Action</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About My Project</h1>
+<h1 class="title">Savings Simulation</h1>
 </div>
 
 
@@ -156,33 +148,325 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ai-vision-safety-monitoring-system" class="level1">
-<h1>AI Vision Safety Monitoring System 👷‍♂️📹</h1>
-<p>This is an end-to-end system that leverages <strong>AI Vision</strong> to monitor <strong>safety compliance</strong> and <strong>attendance</strong> at construction sites.<br>
-Its goal is to enhance worksite safety and efficiency through automation.</p>
-<div class="project-description">
-<p>The system integrates computer vision models with real-time camera feeds to:</p>
-<ul>
-<li>Detect <strong>PPE violations</strong> (e.g., missing helmet or vest)</li>
-<li>Track <strong>on-site personnel attendance</strong></li>
-<li><strong>Capture abnormalities</strong> and instantly <strong>alert supervisors</strong> through a monitoring dashboard</li>
-</ul>
-<p>When any rule violation or dangerous behavior is detected, the system will:</p>
-<ol type="1">
-<li><strong>Capture a snapshot</strong></li>
-<li><strong>Flag the event</strong></li>
-<li><strong>Send an alert</strong> to the central dashboard for human response</li>
-</ol>
+<div style="margin-bottom:20px;">
+<div>
+<label>Savings Rate (%): </label>
+<input type="range" id="savings_rate" min="0" max="100" value="35">
+<span id="savings_rate_value">35</span>
 </div>
-<section id="system-in-action" class="level2">
-<h2 class="anchored" data-anchor-id="system-in-action">System in Action</h2>
-<div class="image-grid-2col">
-<p><img src="about_1.jpg" class="project-image img-fluid"> <img src="about_2.jpg" class="project-image img-fluid"></p>
+<div>
+<label>Interest Rate (%): </label>
+<input type="range" id="interest_rate" min="0" max="10" step="0.1" value="4">
+<span id="interest_rate_value">4</span>
 </div>
+</div>
+<div id="plot" style="height:600px; width: 700px;"></div>
+<script>Plotly.newPlot('plot', {
+  "visdat": {
+    "160df214ac875": ["function () ", "plotlyVisDat"]
+  },
+  "cur_data": "160df214ac875",
+  "attrs": {
+    "160df214ac875": {
+      "x": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "y": {},
+      "type": "bar",
+      "name": "Total Savings (No Interest applied)",
+      "marker": {
+        "color": "lightgreen"
+      },
+      "inherit": true
+    },
+    "160df214ac875.1": {
+      "x": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "y": {},
+      "type": "bar",
+      "base": {},
+      "name": "New Savings in Age Group",
+      "marker": {
+        "color": "darkgreen"
+      },
+      "inherit": true
+    },
+    "160df214ac875.2": {
+      "x": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "y": {},
+      "type": "bar",
+      "name": "Total Savings (With Interest)",
+      "marker": {
+        "color": "purple"
+      },
+      "inherit": true
+    },
+    "160df214ac875.3": {
+      "x": {},
+      "alpha_stroke": 1,
+      "sizes": [10, 100],
+      "spans": [1, 20],
+      "y": {},
+      "name": "Estimated 5-Year Take-home Pay",
+      "type": "scatter",
+      "mode": "lines+markers",
+      "line": {
+        "color": "orange",
+        "width": 3
+      },
+      "marker": {
+        "symbol": "circle",
+        "size": 7,
+        "color": "violet"
+      },
+      "inherit": true
+    }
+  },
+  "layout": {
+    "margin": {
+      "b": 40,
+      "l": 60,
+      "t": 25,
+      "r": 10
+    },
+    "xaxis": {
+      "domain": [0, 1],
+      "automargin": true,
+      "title": "AgeGroup",
+      "type": "category",
+      "categoryorder": "array",
+      "categoryarray": ["15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 & Over"]
+    },
+    "yaxis": {
+      "domain": [0, 1],
+      "automargin": true,
+      "title": "BaseSavings"
+    },
+    "hovermode": "closest",
+    "showlegend": true
+  },
+  "source": "A",
+  "config": {
+    "modeBarButtonsToAdd": ["hoverclosest", "hovercompare"],
+    "showSendToCloud": false
+  },
+  "data": [
+    {
+      "x": ["15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 & Over"],
+      "y": [0, 3360, 50399.600000000006, 117902.40000000001, 203028, 304667.59999999998, 413162.40000000002, 522144, 614880.19999999995, 684617],
+      "type": "bar",
+      "name": "Total Savings (No Interest applied)",
+      "marker": {
+        "color": "lightgreen",
+        "line": {
+          "color": "rgba(31,119,180,1)"
+        }
+      },
+      "error_y": {
+        "color": "rgba(31,119,180,1)"
+      },
+      "error_x": {
+        "color": "rgba(31,119,180,1)"
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    },
+    {
+      "x": ["15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 & Over"],
+      "y": [3360, 47040, 67502.399999999994, 85125.599999999991, 101640, 108494.40000000001, 108981.60000000001, 92735.999999999985, 69736.800000000003, 19152],
+      "type": "bar",
+      "base": [0, 3360, 50399.600000000006, 117902.40000000001, 203028, 304667.59999999998, 413162.40000000002, 522144, 614880.19999999995, 684617],
+      "name": "New Savings in Age Group",
+      "marker": {
+        "color": "darkgreen",
+        "line": {
+          "color": "rgba(255,127,14,1)"
+        }
+      },
+      "error_y": {
+        "color": "rgba(255,127,14,1)"
+      },
+      "error_x": {
+        "color": "rgba(255,127,14,1)"
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    },
+    {
+      "x": ["15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 & Over"],
+      "y": [3494, 57247, 145697, 273165, 446854, 665895, 932942, 1239542, 1586657, 1736445],
+      "type": "bar",
+      "name": "Total Savings (With Interest)",
+      "marker": {
+        "color": "purple",
+        "line": {
+          "color": "rgba(44,160,44,1)"
+        }
+      },
+      "error_y": {
+        "color": "rgba(44,160,44,1)"
+      },
+      "error_x": {
+        "color": "rgba(44,160,44,1)"
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    },
+    {
+      "x": ["15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 & Over"],
+      "y": [48000, 134400, 192864, 243216.00000000003, 290400, 309984, 311376, 264960, 199248.00000000003, 136800],
+      "name": "Estimated 5-Year Take-home Pay",
+      "type": "scatter",
+      "mode": "lines+markers",
+      "line": {
+        "color": "orange",
+        "width": 3
+      },
+      "marker": {
+        "color": "violet",
+        "symbol": "circle",
+        "size": 7,
+        "line": {
+          "color": "rgba(214,39,40,1)"
+        }
+      },
+      "error_y": {
+        "color": "rgba(214,39,40,1)"
+      },
+      "error_x": {
+        "color": "rgba(214,39,40,1)"
+      },
+      "xaxis": "x",
+      "yaxis": "y",
+      "frame": null
+    }
+  ],
+  "highlight": {
+    "on": "plotly_click",
+    "persistent": false,
+    "dynamic": false,
+    "selectize": false,
+    "opacityDim": 0.20000000000000001,
+    "selected": {
+      "opacity": 1
+    },
+    "debounce": 0
+  },
+  "shinyEvents": ["plotly_hover", "plotly_click", "plotly_selected", "plotly_relayout", "plotly_brushed", "plotly_brushing", "plotly_clickannotation", "plotly_doubleclick", "plotly_deselect", "plotly_afterplot", "plotly_sunburstclick"],
+  "base_url": "https://plot.ly"
+});</script>
+<script>var takeHomePay = [800,2240,3214.4,4053.6,4840,5166.4,5189.6,4416,3320.8,2280];var yearsInGroup = [1,5,5,5,5,5,5,5,5,2];var ageGroups = ["15 - 19","20 - 24","25 - 29","30 - 34","35 - 39","40 - 44","45 - 49","50 - 54","55 - 59","60 & Over"];</script>
+<script>
+  function updateChart() {
+    var savingsRate = parseFloat(document.getElementById('savings_rate').value) / 100;
+    var interestRate = parseFloat(document.getElementById('interest_rate').value) / 100;
+
+    var yearlySaving = takeHomePay.map(pay => pay * 12 * savingsRate);
+    var baseSavings = [], bonusSavings = [], bonusBase = [], withInterest = [], takeHome5Y = [], interestGained = [];
+    let cumNoInterest = 0, cumWithInterest = 0;
+
+    for (let i = 0; i < yearlySaving.length; i++) {
+      let bonus = yearlySaving[i] * yearsInGroup[i];
+      baseSavings.push(cumNoInterest);
+      bonusBase.push(cumNoInterest);
+      bonusSavings.push(bonus);
+      cumNoInterest += bonus;
+
+      for (let y = 0; y < yearsInGroup[i]; y++) {
+        cumWithInterest = (cumWithInterest + yearlySaving[i]) * (1 + interestRate);
+      }
+      withInterest.push(Math.round(cumWithInterest));
+      interestGained.push(Math.round(cumWithInterest - cumNoInterest));
+      takeHome5Y.push(takeHomePay[i] * 12 * 5);
+    }
+
+    Plotly.react('plot', [
+      {
+        x: ageGroups,
+        y: baseSavings,
+        name: 'Total Savings (No Interest applied)',
+        type: 'bar',
+        marker: { color: 'lightgreen' },
+        offsetgroup: '1',
+        legendgroup: 'NoInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: bonusSavings,
+        base: bonusBase,
+        name: 'New Savings in Age Group',
+        type: 'bar',
+        marker: { color: 'darkgreen' },
+        offsetgroup: '1',
+        legendgroup: 'NoInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: baseSavings.map((v, i) => v + bonusSavings[i]),
+        name: 'Cumulative Savings (No Interest)',
+        type: 'bar',
+        marker: { color: 'purple' },
+        offsetgroup: '2',
+        legendgroup: 'WithInterest',
+        hoverinfo: 'skip',
+        showlegend: false
+      },
+      {
+        x: ageGroups,
+        y: interestGained,
+        base: baseSavings.map((v, i) => v + bonusSavings[i]),
+        name: 'Total Savings (With Compound Interest)',
+        type: 'bar',
+        marker: { color: 'purple' },
+        offsetgroup: '2',
+        legendgroup: 'WithInterest',
+        hoverinfo: 'y'
+      },
+      {
+        x: ageGroups,
+        y: takeHome5Y,
+        name: 'Estimated 5-Year Take-home Pay',
+        type: 'scatter',
+        mode: 'lines+markers',
+        line: { color: 'orange', width: 3 },
+        marker: { symbol: 'circle', size: 7, color: 'violet' },
+        legendgroup: 'Line'
+      }
+    ], {
+      barmode: 'group',
+      title: 'Savings Comparison: No Interest (Stacked) vs With Interest',
+      xaxis: { title: 'Age Group' },
+      yaxis: { title: 'Amount (SGD)' },
+      hovermode: 'x unified',
+      legend: { x: 0.05, y: 0.95 }
+    });
+  }
+
+  document.getElementById('savings_rate').addEventListener('input', function () {
+    document.getElementById('savings_rate_value').textContent = this.value;
+    updateChart();
+  });
+
+  document.getElementById('interest_rate').addEventListener('input', function () {
+    document.getElementById('interest_rate_value').textContent = this.value;
+    updateChart();
+  });
+
+  setTimeout(updateChart, 300);
+</script>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -220,7 +504,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -252,27 +547,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -280,7 +555,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -377,6 +652,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Tien Loc Profile"
+  title: "Visualizing Savings Accumulation Across Age Groups in Singapore"
   favicon: favicon.png
   navbar:
     logo: favicon.png
@@ -12,10 +12,6 @@ website:
         text: Home
       - href: project.qmd
         text: Project
-      - href: learning-notes.qmd
-        text: Learning Notes
-      - href: reflection.qmd
-        text: Reflection
 
 format:
   html:

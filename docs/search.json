@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Tran Tien Loc",
+    "title": "Savings Visualization Project",
     "section": "",
-    "text": "I’m a Year 1 student majoring in Applied Artificial Intelligence at the Singapore University of Technology.\nWhile my primary focus is AI, I’m also passionate about software engineering, especially in cloud-related technologies.\nCheck out my GitHub profile here: github.com/beginnerloc-sit\n\n\n\nVideo Games: League of Legends main\n\nSports: Football and Badminton\n\nTech Passion: Building things that scale on the cloud"
+    "text": "This project explores how cumulative savings evolve over a person’s working life using realistic assumptions and national data. It reimagines the original DollarsAndSense.sg infographic by improving clarity, transparency, and interactivity.\nWe used income benchmarks from MOM and savings rate estimates from SINGSTAT to model both simple and compound savings scenarios, helping users better understand long-term financial planning.\n\n\n\nRealistic benchmarking using official Singapore datasets\n\nCompare linear (no interest) vs compound savings growth\n\n5-year income line for contextual understanding\n\nInteractive sliders for savings and interest rates\n\nCleaner, more accurate visual representation"
   },
   {
     "objectID": "index.html#interests",
@@ -100,8 +100,36 @@
   {
     "objectID": "project.html",
     "href": "project.html",
-    "title": "About My Project",
+    "title": "Savings Simulation",
     "section": "",
-    "text": "This is an end-to-end system that leverages AI Vision to monitor safety compliance and attendance at construction sites.\nIts goal is to enhance worksite safety and efficiency through automation.\n\nThe system integrates computer vision models with real-time camera feeds to:\n\nDetect PPE violations (e.g., missing helmet or vest)\nTrack on-site personnel attendance\nCapture abnormalities and instantly alert supervisors through a monitoring dashboard\n\nWhen any rule violation or dangerous behavior is detected, the system will:\n\nCapture a snapshot\nFlag the event\nSend an alert to the central dashboard for human response"
+    "text": "Savings Rate (%): \n\n35\n\n\nInterest Rate (%): \n\n4"
+  },
+  {
+    "objectID": "index.html#key-features",
+    "href": "index.html#key-features",
+    "title": "Savings Visualization Project",
+    "section": "",
+    "text": "Realistic benchmarking using official Singapore datasets\n\nCompare linear (no interest) vs compound savings growth\n\n5-year income line for contextual understanding\n\nInteractive sliders for savings and interest rates\n\nCleaner, more accurate visual representation"
+  },
+  {
+    "objectID": "index.html#tools-used",
+    "href": "index.html#tools-used",
+    "title": "Savings Visualization Project",
+    "section": "Tools Used",
+    "text": "Tools Used\n\nR packages: plotly, dplyr, tidyr, readxl, jsonlite, htmltools\nInteractive dashboard built with Quarto and rendered as a website"
+  },
+  {
+    "objectID": "index.html#objective",
+    "href": "index.html#objective",
+    "title": "Savings Visualization Project",
+    "section": "Objective",
+    "text": "Objective\nTo promote financial literacy through accessible, data-driven visualizations that demonstrate the power of consistent savings and compound interest over time."
+  },
+  {
+    "objectID": "project.html#interactive-savings-projection",
+    "href": "project.html#interactive-savings-projection",
+    "title": "Savings Simulation",
+    "section": "",
+    "text": "Savings Rate (%):  35\nInterest Rate (%):  4"
   }
 ]
